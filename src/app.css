@@ -1,3 +1,40 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+@import "@skeletonlabs/skeleton";
+@import "@skeletonlabs/skeleton/optional/presets";
+@import "@skeletonlabs/skeleton/themes/catppuccin";
+@import "@fontsource/open-sans";
+@import "@fontsource/inter";
+
+@source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
+[data-theme="catppuccin"] body {
+  background-image: radial-gradient(
+      at 24% 25%,
+      color-mix(in oklab, var(--color-primary-500) 30%, transparent) 0px,
+      transparent 30%
+    ),
+    radial-gradient(
+      at 35% 13%,
+      color-mix(in oklab, var(--color-success-500) 18%, transparent) 0px,
+      transparent 30%
+    ),
+    radial-gradient(
+      at 100% 64%,
+      color-mix(in oklab, var(--color-error-500) 3%, transparent) 0px,
+      transparent 40%
+    );
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+[data-theme="catppuccin"] {
+  --heading-font-family: "open-snas", sans-serif;
+  --base-font-family: "open-sans", sans-serif;
+  --anchor-font-family: "inherit";
+}
+
+@custom-variant dark (&:where([data-mode="light"], [data-mode="light"] *));
