@@ -41,3 +41,10 @@ export function updateTodo(id: string, todoData: Partial<Todo>) {
 export function deleteTodo(id: string) {
   todos.update((items: Todo[]) => items.filter((todo: Todo) => todo.id !== id));
 }
+
+// Function to delete all Todos in a category
+export function deleteAllInCategory(categoryId: string) {
+  todos.update((items: Todo[]) =>
+    items.filter((todo: Todo) => todo.category !== categoryId)
+  );
+}
