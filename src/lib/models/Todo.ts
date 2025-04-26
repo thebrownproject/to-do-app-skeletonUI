@@ -29,7 +29,7 @@ export class Todo {
   }
 
   // Update data within the Todo object
-  Update(data: Partial<Todo>) {
+  update(data: Partial<Todo>) {
     if (data.title) this.title = data.title;
     if (data.description) this.description = data.description;
     if (data.category) this.category = data.category;
